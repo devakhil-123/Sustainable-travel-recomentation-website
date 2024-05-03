@@ -1,0 +1,19 @@
+{% extends 'index5.html' %}
+
+
+{%block log%}
+       
+        {%csrf_token%}
+        {{form}}
+
+   
+        <button>Login</button>
+        
+
+        
+       
+
+       <a href="{% url 'reg'%}">New user? Sign in</a>
+{%endblock log%}
+
+

@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Design by foolishdeveloper.com -->
+    <title>Glassmorphism login Form Tutorial in html css</title>
+ 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <!--Stylesheet-->
+    <style media="screen">
+
+    </style>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'img/Final Lede V4 (1).webp'%}">
+
+    <style>
+        
+    </style>
+
+</head>
+<body>
+    <img src="{% static 'images/Final Lede V4 (1).webp' %}" class="img-fluid" alt="Responsive image" style="width: 100%;">
+
+<p style="text-align: center; background-color: bisque;">As tourism rebounds from the COVID-19 pandemic, there still remain a number of uncertainties. After such a long pause in global travel, what will the return of tourism look like? Or perhaps a better question is: what should it look like?
+Over the past two decades, the number of international tourist arrivals more than doubled, surpassing 1.4 billion in 2019. While this tourism boom promoted economic growth and personal fulfillment, it often came at the expense of the environment and local communities. As tourism surged, it came hand in hand with gentrification, crowded streets, pollution, and habitat loss. 
+In recent years, destinations began implementing measures to combat the burdens of unsustainable tourism: Hawaii banned the sale of reef-toxic sunscreens, Dubrovnik limited the number of cruise ships that can dock each day, Palau protected 80% of its waters, and Barcelona cracked down on illegal vacation rentals. While these are certainly steps in the right direction, there’s still much more to be done. 
+As a traveler, you can be part of the solution. As tourism recovers from the pandemic, we have an unprecedented opportunity to start things fresh and choose a more sustainable path forward. There’s never been a better time to rethink past habits and reshape the way we travel!</p>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form method="post" >
+        <h3>Login Here</h3>
+        <!-- <IMG>AA</IMG> -->
+
+        {% if messages %}
+            {% for i in messages %}
+               {% if i in level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+               <div class="alert alert-success alert-dismissible">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>{{i}}</strong>
+               </div>
+               {%endif%}
+               {% if i in level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+               <div class="alert alert-danger alert-dismissible">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>{{i}}</strong>
+               {%endif%}
+            {%endfor%}
+
+        {%endif%}
+        <!-- <img src=" style="display: -moz-box;"  alt="" > -->
+        
+        <!-- <label for="username">Username</label>
+        <input type="text" placeholder="Email or Phone" id="username">
+
+        <label for="password">Password</label>
+        <input type="password" placeholder="Password" id="password"> -->
+
+       
+
+        {% block log %}
+        {% endblock log %}
+       
+        <div class="social">
+          <div class="go"><i class="fab fa-google"></i>  Google</div>
+          
+          <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
+        </div>
+    </form>
+</body>
+</html>

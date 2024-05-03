@@ -1,0 +1,285 @@
+
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Title</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+        <script
+        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"
+    ></script>
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"
+    ></script>
+
+    <style>
+      * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: #b2c5b2;
+  color: #F0EEED;
+  /* font-family: 'Shantell Sans', cursive; */
+  font-size: 20px;
+  text-transform: uppercase;
+  overflow-y: auto;
+}
+
+.card-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  height: 100%;
+  overflow-y: auto;
+  padding: 40px 0;
+}
+
+.card {
+  width: 250px;
+  height: 400px;
+  position: relative;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  
+  &-face {
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px 0;
+    backface-visibility: hidden;
+    transition: all .8s ease;
+    box-shadow: 5px 10px 18px rgba(0, 0, 0, .8);
+    overflow: hidden;
+  }
+}
+
+.front {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+  &--1 {
+    background-image: url("https://images.unsplash.com/photo-1543837173-6c26bc89937b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1065&q=80");    
+  }
+  
+  &--2 {
+    background-image: url("https://images.unsplash.com/photo-1510798831971-661eb04b3739?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80");
+  }
+  
+  &--3 {
+    background-image: url("https://images.unsplash.com/photo-1493589976221-c2357c31ad77?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80");
+  }
+  
+  &--4 {
+    background-image: url("https://images.unsplash.com/photo-1609171653225-b224655739d3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80");
+  }
+}
+
+.back {
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  &--1 {
+    background: linear-gradient(#FD841F, #474E68);
+  }
+  
+  &--2 {
+    background: linear-gradient(#395144, #474E68);
+  }
+  
+  &--3 {
+    background: linear-gradient(#F7C8E0, #474E68);
+  }
+  
+  &--4 {
+    background: linear-gradient(#ffffff, #474E68);
+  }
+}
+
+.card:hover {
+  .front {
+    transform: rotateY(180deg);
+  }
+  
+  .back {
+    transform: rotateY(0);
+  }
+}
+
+@media (max-width: 1200px) {
+  .card-container {
+    flex-wrap: wrap;
+  }
+}
+    </style>
+    </head>
+
+    <body>
+      <h1 class="">Sustainable travel               <i class="fa-solid fa-earth-americas"></i>
+      </h1>
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgb(17, 102, 74);">
+            <a class="navbar-brand" href="#">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <i class="fa-solid fa-earth-americas"></i>
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'accomodation' %}">Places to stay</a>
+                  
+                
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'dest' %}">Destinations</a>
+                
+                <li class="nav-item dropdown">
+                  
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <li class="nav-item">
+                  <a class="nav-link disabled" href="">Shopping</a>
+                  </li>
+                    <a class="nav-link" href="{% url 'bicycle' %}">Borrow A Bicycle</a>
+                  </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0 m-4">
+               
+               
+               
+               
+               
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                
+              </form>
+            </div>
+          </nav>
+          <h1>Welcome <span class="text-success">{{request.user.first_name}}</span></h1>
+          {% block main %}
+
+          {% endblock main %}
+      
+  
+
+
+
+     <div>
+
+      
+
+
+
+      <p class="background ">Here are some suggestions on how to help the environment while you travel!
+
+        Using public transport on the ground (like trains and busses) is a huge help. In general, this is better for the environment than renting other modes of transport.  Another benefit is that you can enjoy the beautiful European landscapes around you.
+        Support the local community by buying locally made souvenirs and eating at local restaurants. Enjoy the local culture!
+        Reduce energy consumption. Unplug your mobile phone charger and turn off the lights for example.
+        Preserve water. Every day, hotels and hostels use litres of water. Take shorter showers and use your towel more than once.
+        Try to avoid excessive waste, especially waste of plastics. You can bring your own reusable water bottle and your own shopping bag. And avoid the use of straws in your drinks.
+        If you travel in a group of friends, consider sharing one big bottle of shampoo, body lotion, shower gel et cetera. Each of you can carry one item with them. One big bottle produces less plastic than carrying mini’s with you. And if those products are biodegradable, that’s even better! It means you will leave a clean place to the locals and those visiting after you.
+        Ask your accommodation (hostel, hotel, guest house) and tourism organisations about their sustainability practises. Do they recycle for example? Do they have an environmental policy?
+        Choose local and seasonal products. Go to the local market to buy your fruits and veggies. And if you eat fish, try to make sure that it’s locally caught.
+        Get off the beaten path. Many places are overloaded with tourists each year. Try to discover less crowded places!
+        First, make sure that the locals are happy. Only then, the needs of the tourists should be met.</p>  
+         <img src="{% static 'images/photo-1504001265621-35f465a0b166.jpeg' %}" class="img-fluid" alt="" style="width: 100%;">   
+
+
+        
+
+            
+         <p>Our sustainability recognition programme, accessible to all
+          partners worldwide.
+          We believe in making more sustainable travel choices easier for everyone. If done with respect for local communities, environments and biodiversity, travel can broaden horizons, reduce barriers and bring people closer together. We aim to promote a more sustainable travel industry, so we can collectively preserve a world worth experiencing. </p>
+
+          
+           
+           <div class="row mt-3 m-2 p-5 justify-content-around">
+            <div class="card" style="width:18rem">
+              <div class="card-body">
+                <h4 class="card-title">RESORTS</h4>
+                <!-- <p class="card-text">Resort in ooty</p> -->
+                <img class="card-img-top" src="{% static 'images/379676964.jpg' %}" alt="Card image">
+
+                <a href="{% url 'accomodation' 'Resort' %}" class="stretched-link"></a>
+              </div>
+            </div>
+
+            <div class="card" style="width:18rem">
+              <div class="card-body">
+                <h4 class="card-title">TREE HOUSES</h4>
+                <a href="{% url 'accomodation' %}" class="stretched-link"></a>
+                <img class="card-img-top" src="{% static 'images/download (5).jpg' %}" alt="Card image">
+
+              </div>
+            </div>
+
+            <div class="card" style="width:18rem">
+              <div class="card-body">
+                <h4 class="card-title">HOTEL</h4>
+                <a href="{% url 'accomodation' %}" class="stretched-link"></a>
+                <img class="card-img-top" src="{% static 'images/download (6).jpg' %}" alt="Card image">
+
+              </div>
+            </div>
+
+             <div class="card" style="width:18rem">
+              <div class="card-body">
+                <h4 class="card-title">MOTEL</h4>
+                <a href="{% url 'accomodation' %}" class="stretched-link"></a>
+                <img class="card-img-top" src="{% static 'images/images (2).jpg' %}">
+
+              </div>
+            </div>
+
+
+           </div>
+
+
+           
+
+
+
+         </div>
+      
+    </body>
+</html>
+
+
